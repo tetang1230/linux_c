@@ -259,28 +259,23 @@ int main(int argc, char **argv)
 
 	if (!host) {
 		addrlen = strlen(DEFAULTIP);
-	    char *tmp = DEFAULTIP;	
-		AllocateMemory(&host, addrlen, tmp);
+		AllocateMemory(&host, addrlen, DEFAULTIP);
 	}
 	if (!port) {
 		addrlen = strlen(DEFAULTPORT);
-		char *tmp1 = DEFAULTPORT;
-		AllocateMemory(&port, addrlen, tmp1);
+		AllocateMemory(&port, addrlen, DEFAULTPORT);
 	}
 	if (!back) {
 		addrlen = strlen(DEFAULTBACK);
-		char *tmp2 = DEFAULTBACK;
-		AllocateMemory(&back, addrlen, tmp2);
+		AllocateMemory(&back, addrlen, DEFAULTBACK);
 	}
 	if (!dirroot) {
 		addrlen = strlen(DEFAULTDIR);
-		char *tmp3 = DEFAULTDIR;
-		AllocateMemory(&dirroot, addrlen, tmp3);
+		AllocateMemory(&dirroot, addrlen, DEFAULTDIR);
 	}
 	if (!logdir) {
 		addrlen = strlen(DEFAULTLOG);
-		char *tmp4 = DEFAULTLOG;
-		AllocateMemory(&logdir, addrlen, tmp4);
+		AllocateMemory(&logdir, addrlen, DEFAULTLOG);
 	}
 
 	printf

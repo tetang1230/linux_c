@@ -2,6 +2,7 @@
 #include<malloc.h>
 #include <strings.h>
 #include <string.h>
+//test
 
 void AllocateMemory(char **, int, char *); 
 

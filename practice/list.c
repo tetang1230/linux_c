@@ -1,3 +1,7 @@
+/**
+ * 链表的简单实现
+ */
+
 #include<stdio.h>
 #include<stdlib.h>
 #include<malloc.h>

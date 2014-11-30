@@ -1,15 +1,22 @@
+
+/**
+ * 1. 循环队列里面就是数学问题
+ * 2. 队头和队尾相等时,既可以判断是队列已满,也可以判断队列为空
+ * 为了解决这个问题,队列中最后一个元素只占空间,不存数据,这样的话
+ * front == rear的时候为空队列,  (rear + 1) % LEN = front的时候
+ * 队列就满
+ */
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <stdbool.h>
-
 #define LEN 5
 
 typedef struct _node {
-	int data;
-	struct _node * pnext;
+       int data;
+       struct _node * pnext;
 } node, * pnode;
-
 
 typedef struct _QUEUE{
 	int front;
@@ -54,6 +61,15 @@ bool is_full(PQ p){
 
 }
 
+bool is_empty(PQ p){
+
+	if (p->front == p->rear) {
+		return true;
+	}
+
+	return false;
+}
+
 void en_q(PQ p, int i){
 
 	if(is_full(p)){
@@ -63,11 +79,39 @@ void en_q(PQ p, int i){
 
 	//p->arr[p->rear] = i;
 	p->pn[p->rear].data = i;  
-	p->rear++;
+		
+	//p->rear++;
+	//错误的写法,一直入队列,迟早要
+	//超过最大数LEN的,下面的写法正
+	//确
 
+	p->rear = (p->rear + 1) % LEN;
 }
 
+void out_q(PQ p){
+	
+	int data;
+	
+	if(!is_empty(p)){
+		data = p->pn[p->front].data;
+		p->front = (p->front + 1) % LEN;
+	}else{
+		printf("队列为空！");
+		exit(-3);
+	}
+}
 
+void tranverse(PQ p){
+
+	int i;
+	int s = p->front;
+	int e = p->rear;
+	
+	for (i = s; i < e; i++) {
+		printf("%d\n", p->pn[i].data);
+	}
+
+}
 int main(int argc, const char *argv[])
 {
 
@@ -77,9 +121,9 @@ int main(int argc, const char *argv[])
 	en_q(p,1);
 	en_q(p,100);
 	en_q(p,3);
-	
-	for (i = 0; i < 3; i++) {
-		printf("%d\n", p->pn[i].data);
-	}
+	out_q(p);
+
+	tranverse(p);
+
 	return 0;
 }

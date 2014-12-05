@@ -112,6 +112,20 @@ void tranverse(PQ p){
 	}
 
 }
+
+void destory_queue(PQ p){
+    
+    if(p->pn)
+      free(p->pn);
+    p->pn = NULL;
+
+    //free掉内存以后,指针还继续指向动态分配的内存
+    //需要将指针指向null,这样安全
+
+    p->front = p->rear = 0;
+
+}
+
 int main(int argc, const char *argv[])
 {
 

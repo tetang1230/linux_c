@@ -8,7 +8,7 @@ linux c study
 
 char p          //点,         一页纸上的一个字
 char *p        //线,         一行字
-char **p       //面,         一页字   
+char **p       //面,         一页字   *(*(p+1)+2) //第二行第三列
 char ***p      //空间,     一本书
 
 二维数组

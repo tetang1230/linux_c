@@ -163,6 +163,10 @@ int main(int argc , char *argv[])
 				    //set the string terminating NULL byte on the end of the data read
 				    buffer[valread] = '\0';
 				    send(sd , buffer , strlen(buffer) , 0 );
+				    
+				    //close(sd)
+				    //此时如果将这个close(sd)的注释打开,我们就可以测试一个简单的web服务器
+				    //这个什么都做不了,只是能帮助我们了解下http协议而已
 			    }
 		    }
 	    }

@@ -110,4 +110,4 @@ printf("...%d\n", ++*p);
 *p++按照从右往左结合是*(p++),而p++运算本身是先返回p用于外层计算，然后再执行p++的。所以整个运算过程看上去是*p ; p++，容易令人以为结合顺序是从左往右的
 ```
 
-![c语言值传递](https://github.com/tetang1230/linux_c/tree/master/pic/func_params_pass.jpg)
+![c_func_params_pass](https://github.com/tetang1230/linux_c/tree/master/pic/func_params_pass.jpg)

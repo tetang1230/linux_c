@@ -125,6 +125,7 @@ int main(int argc, const char *argv[])
     char p[] = "123";                                                                                  
     change(p);
     printf("%s\n", p); 
+    //p还是123，因为函数参数是值传递
     return 0;
 }
 ```

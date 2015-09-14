@@ -136,3 +136,5 @@ int main(int argc, const char *argv[])
 ```conf
 上面的程序用图说明一切,函数的参数都是值传递。
 ```
+=======
+#linux_c

@@ -1,6 +1,5 @@
 #include <stdio.h>
-#include <malloc.h>
-
+#include <stdlib.h>
 /**
  * C 语言实现的双向链表，能存储任意数据。
  *

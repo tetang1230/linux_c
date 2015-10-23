@@ -4,7 +4,6 @@
 
 #include<stdio.h>
 #include<stdlib.h>
-#include<malloc.h>
 
 #define LEN 5
 
